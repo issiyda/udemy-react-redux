@@ -5,9 +5,19 @@ import './App.css';
 
 function App() {
 
-    let message = 'test'
+    let message = 'test';
+
+    const profiles = [
+        {name: "Taro", age: 10},
+        {name: "Hanako", age: 20},
+    ];
     return (
         <div className="App">
+            {
+                profiles.map((profile,index) => {
+                    return <User name={profile.name} age={profile.age} key={index}/>
+                })
+            }
             <header className="App-header">
                 <p>{message}</p>
                 <button onClick={() => {
@@ -25,20 +35,17 @@ function App() {
                 {/*>*/}
                 {/*  Learn React*/}
                 {/*</a>*/}
-
-                <Cat/>
-                <Cat/>
-                <Cat/>
-                <Cat/>
+                <User name={"Taro"} age={10}></User>
+                <User name={"Hanako"} age={20}></User>
             </header>
         </div>
     );
 }
 
-const Cat = () => {
+const User = (props) => {
     return (
         <div>
-            nya~~~~~~~~~^
+            Hi Iam {props.name} and {props.age} years old.
         </div>
     )
 }
