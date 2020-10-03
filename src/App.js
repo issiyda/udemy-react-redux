@@ -1,5 +1,7 @@
 import React from 'react';
 import logo from './logo.svg';
+
+import PropTypes from 'prop-types';
 import './App.css';
 
 
@@ -48,6 +50,11 @@ const User = (props) => {
             Hi Iam {props.name} and {props.age} years old.
         </div>
     )
+}
+
+User.propTypes = {
+    name: PropTypes.string,
+    age: PropTypes.number
 }
 
 export default App;
